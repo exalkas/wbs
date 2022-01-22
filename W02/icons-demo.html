@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Icons Demo</title>
+    <script src="https://kit.fontawesome.com/d7444507ce.js" crossorigin="anonymous"></script>
+    <style>
+
+        * {
+            margin: 0px;
+        }
+
+        nav {
+            background-color:greenyellow;
+            padding: 20px;
+        }
+
+        .fa-home {
+            
+        }
+
+        ul {
+            list-style-type: none;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+        }
+
+        .topmenu {
+            margin-left: 20px;
+        }
+
+        .fas {
+            font-size: 40px;
+            color: red;
+        }
+
+        .fas:hover {
+            color: blue;
+            cursor:pointer;
+        }
+
+        .main {
+            width: 70%;
+
+            margin-top: 30px;
+            display:flex;
+            flex-direction: column;
+            justify-content:center;
+            align-items: center;
+            margin: 30px auto;
+        }
+
+        button {
+            margin-top: 30px;
+            background-color: darkred;
+            border: none;
+            color: lightgreen;
+            padding: 10px 20px;
+            width: 100px;
+            border-radius: 10px;
+            font-size:30px;
+        }
+
+        img {
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <!-- ARIA  Accesible rich internet application -->
+    <nav>
+        <ul>
+            <li class="topmenu" title="Go to homepage"><i class="fas fa-home"></i></li>
+            <li class="topmenu" title="Change your settings"><i class="fas fa-cog"></i></li>
+            <li class="topmenu"></li>
+        </ul>
+    </nav>
+    <div class="main">
+        <img src="https://cdn.pixabay.com/photo/2020/11/07/10/24/desert-5720527_960_720.jpg" 
+            alt="Antilopes on the dune">
+        <button area-label="Buy">Buy</button>
+    </div>
+</body>
+</html>

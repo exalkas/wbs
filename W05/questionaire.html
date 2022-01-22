@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        *, *::after, *::before {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            font-size: 2rem;
+        }
+
+        body {
+          padding: 20px;
+        }
+
+        button {
+          padding: 10px;
+          font-size: medium;
+          margin-top: 20px;
+        }
+
+        #hideBtn {
+          border: 5px solid greenyellow;
+        }
+
+        #counter {
+          position: fixed;
+          bottom: 0;
+        }
+
+    </style>
+</head>
+<body>
+    <p>What is the result of 2 + 2?</p>
+    <button id="showBtn">View Answer</button>
+
+    <button id="showBtn1">test</button>
+    
+    <div id="counter">Times viewed: 0</div>
+    <script>
+
+      let countTimes = 0;
+      
+      // onclick="handleViewButton()
+
+      document.getElementById("showBtn").addEventListener("click", handleViewButton)
+
+      document.getElementById("showBtn").addEventListener("abc", handleViewButton)
+
+      // document.body.onload(alert("BOdy is loaded!"))
+
+      function handleViewButton() {
+        const div = document.createElement("div");
+        div.id = "answer";
+
+        div.style.backgroundColor = "#f3f"
+
+        const answer = document.createTextNode("The answer is 4!");
+        
+        div.appendChild(answer);
+        
+
+        // document.body.appendChild(div);
+        const showBtn = document.getElementById("showBtn");
+
+        document.body.insertBefore(div, showBtn);
+
+        showBtn.style.display = "none";
+
+        const hideBtn = document.createElement("button");
+        hideBtn.id = "hideBtn";
+
+        hideBtn.innerText = "Hide"
+
+        // hideBtn.onclick = removeAnswer;
+        hideBtn.onclick = (() => {
+          document.getElementById("hideBtn").remove();
+          document.getElementById("answer").remove();
+          document.getElementById("showBtn").style.display = "unset"
+        });
+
+        document.body.insertBefore(hideBtn, showBtn)
+
+        document.getElementById("counter").addEventListener("click", handleTimer());
+
+        console.log("View clicked, counter= ", countTimes)
+        
+      }
+      
+      function handleTimer() {
+        countTimes++;
+        document.getElementById("counter").innerText = "Times viewed: " + countTimes;
+      }
+
+    </script>
+</body>
+</html>

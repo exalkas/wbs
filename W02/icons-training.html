@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Icons</title>
+    <script src="https://kit.fontawesome.com/d7444507ce.js" crossorigin="anonymous"></script>
+    <style>
+
+        * {
+            margin:0;
+            padding:0;
+        }
+        nav {
+            background-color: aqua;
+        }
+
+        ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .topmenu {
+            margin-left:20px;
+        }
+
+        .topmenu:hover {
+            color:blue;
+            cursor: pointer;
+        }
+
+        main {
+            width:80%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            margin: 30px auto;
+        }
+
+        button {
+            margin-top: 30px;
+            width: 100px;
+            padding: 20px;
+            cursor: pointer;
+            background-color: darkred;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            font-size: 24px;
+        }
+
+        button:hover {
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li class="topmenu"><i class="fas fa-home fa-2x" title="Home"></i></li>
+            <li class="topmenu"><i class="fas fa-cog fa-2x" title="Change your settings"></i></li>
+            <li class="topmenu"><i class="fas fa-user-alt fa-2x" title="Your profile"></i></li>
+            <li class="topmenu"></li>
+        </ul>
+    </nav>
+    <main>
+        <img src="https://cdn.pixabay.com/photo/2020/11/07/10/24/desert-5720527_960_720.jpg" alt="Antilopes standing in desert">
+
+        <button aria-label="Buy">Buy</button>
+    </main>
+
+</body>
+</html>

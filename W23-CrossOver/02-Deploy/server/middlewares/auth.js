@@ -1,0 +1,49 @@
+const jwt = require('jsonwebtoken')
+const Users = require('../models/users')
+
+const auth = async (req, res, next) => {
+
+    console.log('auth here')
+
+    try {
+
+        console.log('auth: cookies are', req.cookies.alan)
+
+        const token = req.cookies.alan;
+
+        console.log('auth: token is', token)
+        console.log('auth: secret is', process.env.SECRET)
+
+
+        if (!token) return res.send({success: false})
+
+        // decode cookie
+        const decoded = jwt.verify(token, process.env.SECRET)
+
+        console.log('decoded is', decoded.user)
+
+        if (decoded) {
+
+            const user = await Users.findOne({"_id": decoded.user, token})
+
+            console.log('User from auth is', user)
+
+            if (user) {
+
+                req.user = user
+                req.token = token;
+                next()
+            } else {
+                res.send({success: false})
+            }
+            
+        } else return res.send({success: false})
+
+    } catch (err) {
+
+        console.log('auth error:', err.message)
+        return res.status(400).send({error: err.message, sucess: false})
+    }
+}
+
+module.exports = auth;

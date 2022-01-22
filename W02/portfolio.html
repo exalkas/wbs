@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My personal portfolio</title>
+    <script src="https://kit.fontawesome.com/d7444507ce.js" crossorigin="anonymous"></script>
+    <style>
+
+        * {
+            margin:0;
+            padding:0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display:flex;
+            flex-direction:column;
+            align-items: center; 
+            height: 100vh;
+        }
+
+        h3 {
+            font-size: 2rem;
+        }
+        header {
+            display:flex;
+            width: 100%;
+            align-items: center;
+            justify-content: space-around;
+        }
+
+        nav {
+            padding:30px;
+        }
+
+        nav ul {
+            display:flex;
+            list-style-type: none;
+        }
+
+        .topmenu {
+            font-size: 32px;
+            margin-right: 20px;
+        }
+
+        .topsection {
+            display:flex;
+            margin-top: 30px;
+            padding:30px;
+        }
+
+        .text {
+            padding:30px;
+            line-height:40px;
+            font-size: 2rem;
+        }
+
+        .text h3 {
+            margin-bottom: 30px;
+        }
+
+        .img {
+            padding:30px;
+        }
+
+        .img img {
+            border-radius: 20px;
+        }
+
+        .projects {
+            width: 100%;
+        }
+        .projects button {
+            font-size:2rem;
+            padding:10px 20px;
+            background-color: transparent;
+            border: 1px solid aqua;
+            color:aqua;
+            margin-left: 60px;
+        }
+
+        button:hover {
+            background-color:darkcyan;
+            color: white;
+            cursor: pointer;
+        }
+
+        .skills {
+            display:flex;
+            flex-direction: column;
+            align-items: flex-start;
+            width: 100%;
+            padding: 60px;
+        }
+
+        .skills h3 {
+            margin-bottom: 30px;
+        }
+
+        .fab {
+            font-size: 3rem;
+            margin-right: 20px;
+            color:aqua;
+        }
+
+        footer {
+            margin-top: auto;
+            font-size: 2rem;
+            padding-bottom: 20px;
+        }
+
+        #modal-container{
+            font-size: 3rem;
+            background-color:  rgb(223, 157, 168, 0.9);
+            display: none;
+        }
+
+        #modal {
+            background-color:  rgb(223, 157, 168, 0.5);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+        }
+
+        #modal button{
+            margin-top: 30px;
+            font-size: 2rem;
+            cursor: pointer;
+            border: 1px solid aqua;
+            color: aqua;
+            background-color: transparent;
+            padding:10px 20px;
+        }
+
+        #modal button:hover {
+            background-color:darkcyan;
+            color: white;
+            cursor: pointer;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Alkis Kastrisios</h1>
+        <nav>
+            <ul>
+                <li class="topmenu">About me</li>
+                <li class="topmenu">Projects</li>
+                <li class="topmenu">SKills</li>
+                <li class="topmenu">Contact</li>
+            </ul>
+        </nav>
+    </header>
+    <section class="topsection">
+        <div class="text">
+            <h3>About Me</h3>
+            <p>Dedicated, experienced Full-Stack Application Developer & Architect who brings more than 20+ years of experience combined with a
+                passion for creating and delivering innovative, high-quality solutions. Known for delivering high-profile applications while consulting
+                for industry leaders. Stellar reputation for quality and efficiency in customer satisfaction, communication, and problem resolution
+                earned while providing 70+ companies worldwide with IT and management support. Respected for advanced skills in strategic
+                planning, data evaluation, marketing strategy, and continuous improvement. Capable of working remotely, ensuring high-quality,
+                efficient, clean code while identifying and addressing potential risks and issues to prevent project delays. Out-of-the-box analytical
+                thinker who creates and delivers solutions that meet objectives tied to business and technology performance and standards while
+                working with a wide range of platforms.</p>
+        </div>
+        <div class="img">
+            <img src="images/alkis.jpg" alt="">
+        </div>
+    </section>
+    <section class="projects">
+        <button onclick="showmodal()">My projects</button>
+    </section>
+    <section class="skills">
+        <h3>My Skills</h3>
+        <div class="iconscontainer">
+            <i class="fab fa-html5"></i>
+            <i class="fab fa-css3-alt"></i>
+            <i class="fab fa-react"></i>
+        </div>
+    </section>
+    <div id="modal-container">
+        <div id="modal">
+            <p>
+                These are my projects
+            </p>
+            <button onclick="closemodal()">Close</button>
+        </div>
+    </div>
+    <footer>
+        Contact me, I want to help you build your project!
+    </footer>
+
+    <script>
+        function showmodal() {
+            // alert("Hello All Everyhing I want");
+
+            const elisabeth = document.getElementById("modal-container");
+
+            elisabeth.style.display = "flex";
+            elisabeth.style.flexDirection = "column";
+            elisabeth.style.alignItems = "center";
+            elisabeth.style.justifyContent = "center";
+            elisabeth.style.position = "absolute";
+
+            //elisabeth.style.top = "0";
+            //elisabeth.style.left = "0";
+            elisabeth.style.width = "100%";
+            elisabeth.style.height = "100vh";
+        }
+
+        function closemodal() {
+            document.getElementById("modal-container").style.display = "none";
+            //elisabeth.style.display = "none";
+        }
+    </script>
+</body>
+</html>

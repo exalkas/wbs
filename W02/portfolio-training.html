@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function showalert() {
+            // alert("It's me the great!");
+            showpopup(); // call another function
+        }
+
+        function showpopup() {
+            //
+            const div = document.getElementById("modal-container");
+
+            div.style.display = "flex";
+            div.style.margin = "auto 0"; 
+            div.style.position = "fixed";
+            div.style.top = "0";
+            div.style.left = "0";
+
+            div.style.width = "100%";
+            div.style.height = "100%";
+        }
+
+        function closeModal() {
+            const div = document.getElementById("modal-container");
+            div.style.display = "none";
+        }
+    </script>
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            display: flex;
+            flex-direction:column;
+            align-items: center;
+            height: 100vh;
+        }
+
+        #modal-container {
+            display: none;
+            opacity: 0.75;
+            height: 90vh;
+            background-color: red;
+        }
+        #modal {
+            background-color:white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100%;
+            width: 100%;
+            z-index: 1000;
+            opacity: 1;
+        }
+
+        #modal > * {
+            margin-top: 20px;
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: center;
+            height: 10vh;
+            
+        }
+
+        button {
+            height: 40px;
+            width: 100px;
+            cursor: pointer;
+        }
+
+        footer {
+            margin-top: auto;
+            padding-bottom: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="button-container">
+
+        <button id="mybtn" onclick="showalert()">Me!</button>
+    </div>
+
+    <div id="modal-container">
+
+        <div id="modal">
+            <h3>Welcome to my site!</h3>
+            <p>I want to thank you for visiting my portfolio</p>
+            <p>I want to thank you for visiting my portfolio</p>
+            <p>Thank you and enjoy</p>
+            <button aria-label="Close" onclick="closeModal()">Close</button>
+        </div>
+    </div>
+    <footer>
+        <div class="contact">Contact me, I want to help you</div>
+    </footer>
+</body>
+</html>
